@@ -80,6 +80,7 @@ actions = TouchAction(driver)
 actions.tap(x=x*lx, y=y*ly)
 actions.perform()
 
+
 time.sleep(1)
 s=time.strftime("%m%d", time.localtime())+'_'
 img = s+'1563014053'+'.png'
