@@ -4,6 +4,7 @@ import time
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.keys import Keys
 
+dyno='1542684036'
 wb = xlrd.open_workbook('init.xlsx')
 sh = wb.sheet_by_name('appium')
 desired_caps = {}
@@ -42,7 +43,7 @@ el = driver.find_element_by_id('com.ss.android.ugc.aweme:id/a5q')
 # 抖音号
 el.click()
 time.sleep(0.5)
-el.send_keys(1563014053)
+el.send_keys(dyno)
 
 print(el.text)
 # el.send_keys(Keys.ENTER)
@@ -57,14 +58,14 @@ el.click()
 time.sleep(5)
 el = driver.find_element_by_id('com.ss.android.ugc.aweme:id/a1e')
 
-assert el.text == '抖音号: ' + '1563014053'
+assert el.text == '抖音号: ' + dyno
 
 # el=driver.find_element_by_id('com.ss.android.ugc.aweme:id/a6m')
 # el.click()
 
 # el = driver.find_element_by_id('com.ss.android.ugc.aweme:id/amq')
 els=driver.find_elements_by_id('com.ss.android.ugc.aweme:id/amm')
-els[2].click()
+els[0].click()
 
 #用图片查看工具找到元素的坐标位置
 lx=657/720
@@ -83,7 +84,7 @@ actions.perform()
 
 time.sleep(1)
 s=time.strftime("%m%d", time.localtime())+'_'
-img = s+'1563014053'+'.png'
+img = s+dyno+'.png'
 driver.save_screenshot(img)
 
 if __name__ == '__main__':
